@@ -217,3 +217,122 @@ let sss = 'AAAA'
   sss  = 'AAAA'
   ? console.log("BBBBB") //BBBBB
   : console.log("CCCCC");
+
+  // Module 3 
+
+  //invoke function
+
+  /*
+  to actually use a function after it has been defined, you've got to run — or invoke — it. This is done by including the name of the function in the code somewhere, followed by parentheses.
+  */
+ //invoking is useful when I want to inveke funktion anytime and anywhere.
+  function myFunction() {
+    alert('hello');
+  }
+  
+  myFunction();
+
+//Defining functions
+
+//creating a reusable block of code that performs a specific task.
+
+//Defining functions is to make block for use many times.
+  function addNumbers(a, b) {
+    return a + b;
+  }
+
+  //Anonymous Function
+
+/*
+This is called an anonymous function, because it has no name. You'll often see anonymous functions when a function expects to receive another function as a parameter. In this case the function parameter is often passed as an anonymous function.
+*/
+
+// You can use Anonymous Function when you want to add variables.
+  (function () {
+    alert('hello');
+  })
+
+  //Arrow functions
+  /*
+If you pass an anonymous function like this, there's an alternative form you can use, called an arrow function. Instead of function(event), you write (event) =>:
+If the function only has one line in the curly brackets, you omit the curly brackets:
+  */
+//You can make code more brief
+
+let hello;
+
+hello = () => "Hello World";
+console.log(hello());
+
+//Scope
+
+/*
+Let's talk a bit about scope — a very important concept when dealing with functions. When you create a function, the variables and other things defined inside the function are inside their own separate scope, meaning that they are locked away in their own separate compartments, unreachable from code outside the functions.
+
+The top level outside all your functions is called the global scope. Values defined in the global scope are accessible from everywhere in the code.
+*/ 
+
+/**
+ * There is two kinds of scopes. First one is grobal scope,
+ this is can acces from script. It's similer to public in C#.
+ Second one is local scope. It's can access from only function.
+ * */
+
+const name1 = 'Chris';
+function greeting() {
+  alert(`Hello ${name1}: welcome to our company.`);
+}
+
+//Return Value
+
+/**
+ * When the function completes (finishes running), it returns a value, which is a new string with the replacement made. In the code above, the result of this return value is saved in the variable newString.
+
+If you look at the replace() function MDN reference page, you'll see a section called return value. It is very useful to know and understand what values are returned by functions, so we try to include this information wherever possible.
+
+Some functions don't return any value. (In these cases, our reference pages list the return value as void or undefined.) For example, in the displayMessage() function we built in the previous article, no specific value is returned when the function is invoked. It just makes a box appear somewhere on the screen — that's it!
+ */
+
+const myText = "The weather is cold";
+const newString = myText.replace("cold", "warm");
+console.log(newString); // Should print "The weather is warm"
+// the replace() string function takes a string,
+// replaces one substring with another, and returns
+// a new string with the replacement made
+
+//Default values
+
+/**
+ * In this example, the greet function takes a name parameter, which defaults to 'Guest' if no value is provided. When the function is called with no arguments, it uses the default value of 'Guest' and prints "Hello, Guest!" to the console. When the function is called with the argument 'John', it uses that value instead and prints "Hello, John!" to the console.
+ */
+
+//zin this ex, Hello is defalt value, name varianle can chage other name but usually I don't change hallo to other word.
+
+function greet(name = 'Guest') {
+  console.log(`Hello, ${name}!`);
+}
+
+greet(); 
+greet('John'); 
+
+//Call Stack
+
+/**
+ * Call stack is a mechanism used by the language to keep track of function calls in a program. It is a data structure that stores information about the active functions in the program and the order in which they were called.
+ */
+
+//Call stack is based on Last-In, First-Out structure. 
+
+const function1 = () => {
+  console.log("start");
+};
+const function2 = () => {
+  console.log("next");
+}
+const function3 = () => {
+  console.log("end");
+}
+
+function1();
+function2();
+function3();
