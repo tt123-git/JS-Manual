@@ -295,7 +295,8 @@ Some functions don't return any value. (In these cases, our reference pages list
 
 const myText = "The weather is cold";
 const newString = myText.replace("cold", "warm");
-console.log(newString); // Should print "The weather is warm"
+console.log(newString); 
+// Should print "The weather is warm"
 // the replace() string function takes a string,
 // replaces one substring with another, and returns
 // a new string with the replacement made
@@ -336,3 +337,9 @@ const function3 = () => {
 function1();
 function2();
 function3();
+
+// Different types of errors
+
+/**Type Error
+ * The TypeError object represents an error when an operation could not be performed, typically (but not exclusively) when a value is not of the expected type.
+ */
