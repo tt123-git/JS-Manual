@@ -343,3 +343,214 @@ function3();
 /**Type Error
  * The TypeError object represents an error when an operation could not be performed, typically (but not exclusively) when a value is not of the expected type.
  */
+
+// Module 4
+
+// Creating Array
+
+//Typical array style
+const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars);
+
+//Accessing Array Elements, including first and last
+
+//access an array element by referring to the index number:
+console.log(cars[cars.length - 3]); //access to first
+console.log(cars[cars.length - 1]); // access to end
+//Changing an Array Element
+//Changing element from "Saab" to "Opel"
+cars[0] = "Opel";
+console.log(cars[0]);
+
+//Length Property
+console.log(cars.length);
+
+//Looping over Array Elements
+//This loop will loop until reach to numbers of cars.length
+for (let i = 0; i < cars.length; i++) {
+  console.log(cars[i]);
+}
+
+//Difference between Arrays & Objects
+
+/**
+ * You should use objects when you want the element names to be strings (text).
+   You should use arrays when you want the element names to be numbers.
+ */
+   const point = new Array(40, 100, 1, 5, 25, 10); //Array
+   const points = [40, 100, 1, 5, 25, 10]; // Object
+
+
+  console.log(point);
+  console.log(points);
+
+  //Converting Arrays to Strings
+
+  //This method can convert from array to string
+  console.log(cars.toString());
+
+  //push(), pop()
+
+  //Popping items out of an array, or pushing items into an array.
+
+  let po = cars.pop(); // delete BMW
+  //console.log(po);
+  console.log(cars);
+
+  let p = cars.push("Honda"); // Add Honda
+  //console.log(p);
+  console.log(cars);
+  
+
+  //shift(), unshift()
+
+  /**
+   * The shift() method removes the first array element and "shifts" all other elements to a lower index.
+   * 
+   * The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+   */
+
+  console.log(cars.shift());
+  let un = cars.unshift("Nissan");
+  console.log(un);
+
+  //Concatenating/Merging Arrays
+  /**
+   * The concat() method creates a new array by merging (concatenating) existing arrays:
+   */
+
+  console.log(cars.concat(points));
+
+
+  //Flattening an Array
+  //Flattening an array is the process of reducing the dimensionality of an array.
+  //The flat() method creates a new array with sub-array elements concatenated to a specified depth.
+  const myArr = [[1,2],[3,4],[5,6]];
+  console.log(myArr.flat());
+
+  //Splicing and Slicing Arrays
+
+  /**
+   * The splice() method adds new items to an array.
+
+     The slice() method slices out a piece of an array.
+   */
+
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     console.log(fruits.splice(2, 1, "Lemon", "Kiwi"));
+     console.log(fruits.slice(1));
+
+     //Loops
+
+     //.map()
+
+     /**
+      * You can use map() to do something to each item in a collection and create a new collection containing the changed items:
+      */
+      function toUpper(string) {
+      return string.toUpperCase();
+    }
+
+    const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+
+    const upperCats = cats.map(toUpper);
+
+    console.log(upperCats);
+
+    //.filter()
+
+    //You can use filter() to test each item in a collection, and create a new collection containing only items that match:
+
+      function lCat(cat) {
+      return cat.startsWith('L');
+    }
+
+    const filtered = cats.filter(lCat);
+
+    console.log(filtered);
+
+    //for loop
+
+    // This is same with other langages for loop style
+
+    for(let i = 1; i < 3; i++)
+       {
+        console.log(upperCats);
+       }
+
+       //for...of Loop
+
+       /**
+        * you might start i at 1, forgetting that the first array index is zero, not 1.
+          you might stop at i <= cats.length, forgetting that the last array index is at length - 1.
+          For reasons like this, it's usually best to use for...of if you can.
+        */
+
+       for (const cat of cats) {
+          console.log(cat);
+
+      //break Statement  
+
+      /**
+       * It's the same with loops — a break statement will immediately exit the loop and make the browser move on   to any code that follows it.
+       */
+
+      for(let i = 1; i < 10; i++)
+       {
+        if(i == 3) break;
+        console.log(upperCats);
+       }
+
+       //Continue statement
+
+       /**
+        * The continue statement works similarly to break, but instead of breaking out of the loop entirely, it skips to the next iteration of the loop. 
+        */
+
+       //This code is skip 3 of multiple
+
+       for (let i = 1; i < 10; i++){
+        if (i % 3 == 0){
+          continue;
+        }
+        console.log(i);
+      }
+      
+      console.log('end');
+
+      //while Loop
+
+      /**
+       * This works in a very similar way to the for loop, except that the initializer variable is set before the loop, and the final-expression is included inside the loop after the code to run, rather than these two items being included inside the parentheses. The condition is included inside the parentheses, which are preceded by the while keyword rather than for.
+       */
+      let text = "";
+      let i = 1;
+
+      while (i < 3) {
+        text += "The number is " + i;
+        console.log(text);
+        i++;
+      }
+
+      //do while
+
+      /**
+       * The do...while statement creates a loop that executes a specified statement until the test condition evaluates to false. The condition is evaluated after executing the statement, resulting in the specified statement executing at least once.
+       */
+
+      let result = '';
+
+      do {
+        i = i + 1;
+        result = result + i;
+      } while (i < 5);
+
+      console.log(result);
+
+      //TDD discribe
+
+      /**
+       * Test driven development is way to makes test time shortly. Write fale code before write what I need to write, by doing so we can know which part will excute bug. Also it is need to write collect code before what I need to write. This process makes us understand where is problem and makes prevent unexpected bug.
+       */
+
+}
