@@ -553,4 +553,168 @@ for (let i = 0; i < cars.length; i++) {
        * Test driven development is way to makes test time shortly. Write fale code before write what I need to write, by doing so we can know which part will excute bug. Also it is need to write collect code before what I need to write. This process makes us understand where is problem and makes prevent unexpected bug.
        */
 
+      //Module 5
+
+      // Query Selectors
+      //Query selector can get HTML element by using css
+      const myElement = document.querySelector("#myElement");
+
+      //Element Creation
+      //Element creation is can make new HTML elemnt
+      const div = document.createElement('div');
+
+      //Append Element
+      //Append Element can add child element to already existed element
+     const div1 = document.querySelector('div');
+     const p = document.createElement('p');
+     div.appendChild(p);
+
+     //Removing elements
+     //Remove Element can remove what I selected
+
+     /**
+      *  const element = document.getElementById("myElement");
+     element.remove();
+      */
+    
+      
+     
+
+     //Altering Elements
+     //Altering Elements can change HTML contents, but there are several way to change content by using some methods.
+      /**
+       *const element1 = document.getElementById('myElement');
+      element1.innerHTML = 'New Thing';  
+       
+       */
+      
+     
+
+     // Adding Inline
+     // Adding Inline is to set style by using set property
+     /**
+      *const element1 = document.getElementById('myElement');
+     element1.style.backgroundColor = 'red'; 
+      */
+     
+
+     //Editing Attribute
+     //Editiong Attribute can edit edit attribute
+     /**
+      * const element = document.getElementById("myElement1");
+      element.setAttribute('class', 'newClass');
+      */
+
+      //Working with Classes
+      //Javascript can also work with html classes.
+      div.classList.add('new');                                      
+      // adds class "new" to your new div
+
+      div.classList.remove('new');                                   
+      // removes "new" class from div
+
+      div.classList.toggle('active');                                
+      // if div doesn't have class "active" then add it, or if
+      // it does, then remove it
+
+      // Adding Text Content
+      //Javascript can add text content to html
+      div.textContent = 'Hello World!'                               
+      // creates a text node containing "Hello World!" and
+      // inserts it in div
+      //Adding HTML Content
+      div.innerHTML = '<span>Hello World!</span>';                   
+      // renders the HTML inside div
+
+      //How to defer a <script> tag until the page loads
+
+      /**
+       * To defer a <script> tag until the page loads, you can use the defer attribute. This tells the browser to download and parse the script in the background while the rest of the page is being loaded, but to defer executing the script until the page has finished loading
+       */
+      //getElementsByTagName
+      //getElementsByTagName can get info by Tag Name
+      const collection = document.getElementsByTagName("li");
+
+      //getElementsByClassName
+      //getElementsByClassName can get info by class name
+      const collection1 = document.getElementsByClassName("example");
+
+      //getElementById
+      //getElementById can get info by element id
+      const demo = document.getElementById("demo");
+
+      //Event
+
+      //Button method 1
+     //<button onclick="alert('Hello World')">Click Me</button>
+      /**
+       * This solution is less than ideal because we’re cluttering our HTML with JavaScript. Also, we can only set one “onclick” property per DOM element, so we’re unable to run multiple separate functions in response to a click event using this method.
+       */
+
+      //Button method 2
+      //This method is select by id name and add onclic method
+      /**
+       *const btn2 = document.querySelector('#btn2');
+       btn2.onclick = () => alert("Hello World"); 
+       */
+       
+
+       //Module 3 
+       // This method using EventListener, when clicked button, pup up hello world
+       /**
+        * const btn = document.querySelector('#btn');
+       btn.addEventListener('click', () => {
+        alert("Hello World");
+       });
+
+       //Passing a parameter into your event listener function
+       //myParam and event passed to myFunction();
+       
+       const myButton = document.querySelector('#myButton');
+
+       const myFunction = (event, myParam) => {
+          
+       console.log(myParam);
+        };
+
+       myButton.addEventListener('click', (event) => {
+       myFunction(event, 'Hello World');
+        });
+        * 
+        */
+       
+
+
+        //Attaching listeners to a Group of Nodes
+        //This is select all button using querySelector,forEach method to iterate through each button and alert button ID
+        /**
+         * <div id="container">
+    <button id="1">Click Me</button>
+    <button id="2">Click Me</button>
+    <button id="3">Click Me</button>
+    <script>
+      const buttons = document.querySelectorAll('button');
+
+      // we use the .forEach method to iterate through each button
+      buttons.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', () => {
+          alert(button.id);
+        });
+      });
+    </script>
+         */
+
+    //Some useful events besides "click"
+
+    /**
+     * "load" event: This event is triggered when the page and all its assets (images, videos, etc.) have finished loading.
+
+       "submit" event: This event is triggered when a form is submitted.
+       "keydown" event: This event is triggered when a key on the keyboard is pressed down.
+
+       "keyup" event: This event is triggered when a key on the keyboard is released.
+     */
+      
 }
