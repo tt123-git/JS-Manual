@@ -718,3 +718,221 @@ for (let i = 0; i < cars.length; i++) {
      */
       
 }
+
+//Module 6
+
+//Creating an empty object
+//This is how to create empty object
+let user = {}; 
+console.log(user);
+
+//Creating an object with "key: value" pairs
+//Key is content or value of object.
+const person = {
+  name: 'John',
+  age: 30,
+  profession: 'Engineer'
+};
+
+console.log(person.profession);
+
+//How to access property values of an object
+//You can access property value using both of ways, use dot and brackets.
+console.log(person.name);
+console.log(person["age"]);
+
+//How to add new "key: value" pairs
+//this is how to add key value, also you can use both of way.
+person.color = 'red';
+person['city'] = 'Bremerton';
+console.log(person.color);
+console.log(person.city);
+
+//How to delete "key: value" pairs
+//In order to delete key value is using delete.
+
+delete person.color;
+console.log(person);
+
+//When you need to use square bracket notation, instead of dot access
+
+/**
+ * The dot requires the key to be a valid variable identifier. That implies: contains no spaces, doesn’t start with a digit and doesn’t include special characters ($ and _ are allowed).
+
+There’s an alternative “square bracket notation” that works with any string:
+ */
+
+//The in operator
+// In is useful when I want to confirm property exist in an object
+console.log('age' in person);
+
+//For in loop
+/**
+ * The for...in loop is a JavaScript loop statement used to iterate over the enumerable properties of an object. It allows you to loop through all the keys (property names) of an object, including those inherited from its prototype chain.
+ */
+
+for (let key in person) {
+  
+  console.log( key ); 
+  console.log(person[key] ); 
+}
+
+//The this keyword
+/**
+ * The this keyword refers to the current object the code is being written inside, also if you want to create more than two, "this" is useful 
+ */
+
+const person1 = {
+  name: "Chris",
+  introduceSelf() {
+    console.log(`Hi! I'm ${this.name}.`);
+  },
+};
+
+const person2 = {
+  name: "Deepti",
+  introduceSelf() {
+    console.log(`Hi! I'm ${this.name}.`);
+  },
+};
+
+person1.introduceSelf(); 
+person2.introduceSelf();
+
+//Constructors
+
+//The constructor method is a special method of a class for creating and initializing an object instance of that class.
+class Polygon {
+  constructor() {
+    this.name = 'Polygon';
+  }
+}
+
+const poly1 = new Polygon();
+
+console.log(poly1.name);
+
+//.forEach
+// array method of forEach is same with other langages for each. This code excute along with call back function, so numbers will excute in order.
+const array = [1, 2, 3, 4, 5];
+
+array.forEach(function(element) {
+  console.log(element);
+});
+
+//.indexOf
+//This can check numbers from array, for this case, 3 will return 2 but if number doesn't exsist in array, it return -1.
+
+const index = array.indexOf(3);
+console.log(index); 
+
+const notFoundIndex = array.indexOf(6);
+console.log(notFoundIndex); 
+
+//.lastIndexOf
+//This is oppsite version compare with .indexOf, .lastIndexOf check number from back. 
+const lastIndex = array.lastIndexOf(3);
+console.log(lastIndex);
+
+const notFoundIndex1 = array.lastIndexOf(6);
+console.log(notFoundIndex1); 
+
+//.find
+//This is check array content with condition , in this case is grater than 2, so return 3
+const foundElement = array.find(function(element) {
+  return element > 2;
+});
+
+console.log(foundElement); 
+
+//.sort
+//This is sort arry by unicde order, this also same wtih string.
+const array1 = [3, 1, 5, 2, 4];
+
+array.sort();
+
+console.log(array);
+
+//.reverse
+//This is makes reverse array content order
+
+array.reverse();
+
+console.log(array); 
+
+//.split
+//This can split by canma or reguler experession's operater
+
+const str1 = "apple,banana,cherry,date";
+
+const array2 = str.split(",");
+
+console.log(array); 
+
+//.join
+// This can return array content by string with defined operater like canma
+const str2 = array2.join(",");
+
+console.log(str);
+
+//.reduce
+//.reduce is return accumilater value
+
+const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(sum); 
+
+//.isArray
+//This can check array or not, then return ture o not
+
+console.log(Array.isArray(array)); 
+
+const notArray = "Hello";
+
+console.log(Array.isArray(notArray));
+
+//JSON Syntax Rules
+/**
+ * 
+Data is in name/value pairs
+Data is separated by commas
+Curly braces hold objects
+Square brackets hold arrays
+ */
+//Converting from JSON text to a Javascript object
+
+//First, I need to perse from JSON data to javascript object, after the perse, you can convert to javascript object
+
+const jsonString = '{"name": "John", "age": 30, "isStudent": false}';
+
+const jsonObject = JSON.parse(jsonString);
+
+console.log(jsonObject); 
+
+//How to access data in JSON hierarchy (include example of deeply nested data)
+//In order to access nested JSON hierarchy is using dot, then I can  access them. 
+const data = {
+  name: "Tohn",
+  age: 22,
+  contact: {
+    email: "tatsmi@example.com",
+    phone: {
+      home: "123-456-7890",
+      work: "987-654-3210"
+    }
+  },
+  address: {
+    street: "123 Main St",
+    city: "New York",
+  }
+};
+
+console.log(data.contact.email);
+console.log(data.address.city);
+
+//How to validate JSON
+// I need to use parse before start access them
+
+const jsonObject1 = JSON.parse(jsonString);
+
+console.log(jsonObject1); 
