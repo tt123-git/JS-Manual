@@ -60,6 +60,189 @@
       });
     </script>
 </div>
- 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+   $(document).ready(function() {
+    console.log("This page is ready");
+  });
+ </script>
+ <p>AAAAA</p>
+ <script>
+
+  $(document).ready(function(){    // Execute jQuery code when document is ready
+    
+    $("p").css("color","#cc0000"); // Select p elements and change color with CSS
+  
+  });
+  
+  </script>
+  <div id="bbb">
+    <p>bbbb</p>
+  </div>
+
+  <script>
+
+    $(document).ready(function(){        //Execute jQuery code when document is ready
+      
+      $("#bbb").css("color","#cc0000"); //Select #demo ID and change color with CSS
+    
+    });
+    
+    </script>
+<div class="ccc">
+  <p>ccc</p>
+</div>
+
+<script>
+
+  $(document).ready(function(){        // Execute jQuery code when document is ready
+    
+    $(".ccc").css("color","#cc0000"); // Select .demo class and change color with CSS
+  
+  });
+  
+  </script>
+  <div id="ddd">
+    <p>dddd</p>
+    <p>eee</p>
+  </div>
+  
+  <script>
+
+    $(document).ready(function(){          // Execute jQuery code when document is ready
+      
+      $("#ddd,p").css("color","#cc0000"); // Select #demo ID and all p elements for CSS color
+    
+    });
+    
+    </script>
+    
+    <script>
+      $(document).ready(function() {
+        
+        $("#ddd,p").click(function() {         // When user clicks the target, executes function
+          $(this).css("color","#cc111"); // Passes the current selection as "this" into function
+        });
+        
+      });
+      </script>
+     
+      <script>
+
+        $(document).ready(function(){
+        
+          $("p")
+          .mouseenter(function() {          // When mouse enters the target, executes function
+            $(this).css("color","#cc0000"); // Passes the current selection as "this" into function
+          })                                // Note the missing ;
+          .mouseleave(function() {
+            $(this).css("color","#000000");
+          });                               // Note the use of ; to end the statement
+        
+        });
+        
+        </script>
+       <div id="hide">
+        <p>ggggg</p>
+       </div>
+       <div id="show">
+        <p>hhhhh</p>
+       </div>
+        <script>
+
+          $(document).ready(function() {
+            
+            $("#hide").click(function() {
+              $("#ddd").hide();           // The hide is instant
+            });
+            
+            $("#show").click(function() {
+              $("#ddd").show(2000);       // The show is 2 sec
+            });
+          
+          });
+          
+          </script>
+          <div id="hide1">
+           <p>iiii</p>
+          </div>
+          <div id="show1">
+           <p>jjj</p>
+          </div>
+          <div id="demo">
+           <p>kkkk</p>
+          </div>
+          <script>
+
+            $(document).ready(function() {
+              
+              $("#hide1").click(function() {
+                $("#demo").slideUp();        // The slideUp is default (400 milliseconds)
+              });
+              
+              $("#show1").click(function() {
+                $("#demo").slideDown(2000);  // The slideDown is 2 sec
+              });
+            
+            });
+            
+            </script>
+            <div id="toggle">
+              <p>toggle</p>
+            </div>
+            <div id="demo1">
+              <p>demo1</p>
+            </div>
+            <script>
+
+              $(document).ready(function() {
+                
+                $("#toggle").click(function() {
+                  $("#demo1").toggle(500); // Toggle between hide / show with .5 sec
+                });
+                
+              });
+              
+              </script>
+              <div id="stop"><p>stop</p></div>
+              <script>
+
+                $(document).ready(function() {
+                  
+                  $("#toggle").click(function() {
+                    $("#demo1").toggle(5000);
+                  });
+                
+                  $("#stop").click(function() {
+                    $("#demo1").stop(); //Stop animation event
+                  });
+                
+                });
+                
+                </script>
+<script>
+$(document).ready(function() {
+	
+  $("#demo")
+  .css("color","#cc0000")  // Note *no* ; in the middle of the chain
+  .hide(2000)
+  .show(2000);             // Note the ; at the end of the chain
+
+});
+
+</script>
+<script>
+
+  $(document).ready(function() {
+  
+    $("#demo1").hide(2000,function() {      // Callback to hide text
+      $("#demo1").show(2000,function() {    // Callback to show text
+        $("#demo1").css("color","#cc0000"); // Color changes after show callback
+      });
+    });
+  
+  });
+  
+  </script>
 </body>
 </html>

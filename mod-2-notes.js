@@ -936,3 +936,173 @@ console.log(data.address.city);
 const jsonObject1 = JSON.parse(jsonString);
 
 console.log(jsonObject1); 
+
+//Module 7
+
+//Script tag to include JQuery library in your webpage
+  //<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  //Before use JQuery I need to write this script tag
+
+  //How to use .ready()
+
+  //.ready() excute after page loaded, so it is more safety to execute code.
+  /*$(document).ready(function() {
+    console.log("This page is ready");
+  });*/
+
+  //How to use JQuery selectors
+  //byElement
+
+  //This one can edit html element by element tag
+  /**
+   *  $(document).ready(function(){    // Execute jQuery code when document is ready
+    
+    $("p").css("color","#cc0000"); // Select p elements and change color with CSS
+  
+  });
+   */
+
+  //By ID
+  //This one can edit html element by element id
+  /**
+   * $(document).ready(function(){        //Execute jQuery code when document is ready
+      
+      $("#bbb").css("color","#cc0000"); //Select #demo ID and change color with CSS
+   */
+  
+      //By Class
+      //This one can edit html element by element class
+      /**
+       * $(document).ready(function(){        // Execute jQuery code when document is ready
+    
+    $(".ccc").css("color","#cc0000"); // Select .demo class and change color with CSS
+  
+  });
+       */
+
+  //Selecting multiple targets
+  //This one can edit multipul html element by element class
+  /**
+   * $(document).ready(function(){          // Execute jQuery code when document is ready
+      
+      $("#demo,p").css("color","#cc0000"); // Select #demo ID and all p elements for CSS color
+    
+    });
+   */
+
+    //How to use JQuery Events
+    //.click()
+    //This code execute when the user clicks on the target item.
+    /**
+     * $(document).ready(function() {
+	
+  $("p").click(function() {         --- When user clicks the target, executes function
+    $(this).css("color","#cc0000"); --- Passes the current selection as "this" into function
+  });
+  
+});
+//.mouseenter()
+//.mouseleave()
+// This code execute when the mouse enters or leaves the target. 
+     */
+    /**
+     * $(document).ready(function(){
+        
+          $("p")
+          .mouseenter(function() {          // When mouse enters the target, executes function
+            $(this).css("color","#cc0000"); // Passes the current selection as "this" into function
+          })                                // Note the missing ;
+          .mouseleave(function() {
+            $(this).css("color","#000000");
+          });                               // Note the use of ; to end the statement
+        
+        });
+     */
+
+ //How to use JQuery Effects
+//.show() .hide()
+//This two effect can makes show and hide by select selector        
+/**
+ * $(document).ready(function() {
+	
+  $("#hide").click(function() {
+    $("#demo").hide();           --- The hide is instant
+  });
+  
+  $("#show").click(function() {
+    $("#demo").show(2000);       --- The show is 2 sec
+  });
+
+});
+
+ */
+
+//.slideDown() / .slideUp() 
+//slideDown can slide down what I select element
+//slideUp can slide Up what select element
+/**
+ * $(document).ready(function() {
+	
+  $("#hide").click(function() {
+    $("#demo").slideUp();        --- The slideUp is default (400 milliseconds)
+  });
+  
+  $("#show").click(function() {
+    $("#demo").slideDown(2000);  --- The slideDown is 2 sec
+  });
+
+});
+ */
+
+//.toggle()
+//This one can makes hade and show up what I select element, this is useful for make ui
+/**
+ * $(document).ready(function() {
+                
+                $("#toggle").click(function() {
+                  $("#demo1").toggle(500); // Toggle between hide / show with .5 sec
+                });
+                
+              });
+ */
+
+//.stop() 
+//This effct can stop animetion              
+/**
+ * $(document).ready(function() {
+	
+  $("#toggle").click(function() {
+    $("#demo").toggle(5000);
+  });
+
+  $("#stop").click(function() {
+    $("#demo").stop(); --- Stop animation event
+  });
+
+});
+ */
+//Chaining in JQuery
+//This is very useful way to chose same element it makes clear code
+/**
+ * $(document).ready(function() {
+	
+  $("#demo")
+  .css("color","#cc0000")  // Note *no* ; in the middle of the chain
+  .hide(2000)
+  .show(2000);             // Note the ; at the end of the chain
+
+});
+ */
+//Callbacks
+//JQuery callback is after suucessed previous call. So JQuery callback will execute order is in order.
+/**
+ *  $(document).ready(function() {
+  
+    $("#demo1").hide(2000,function() {      // Callback to hide text
+      $("#demo1").show(2000,function() {    // Callback to show text
+        $("#demo1").css("color","#cc0000"); // Color changes after show callback
+      });
+    });
+  
+  });
+ */
