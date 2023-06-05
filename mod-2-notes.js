@@ -1106,3 +1106,83 @@ console.log(jsonObject1);
   
   });
  */
+
+//Module 8
+
+//What is the difference between frontend and backend development?
+/**
+ * Frontend developer is mainly use html, css and javascript. They make UI and design on web pages. Frontend developer need to think what will user think.
+ * 
+ * Backend developer working with behind the server, so user doesn't care what kind of langages I use like PHP, C#, Ruby, Python and Java. Because any langages can recive HTTP request and send to html.
+ */
+
+//How is dynamic webpage content generated?
+/**
+ * Dynamic webpage content is generated using a combination of server-side and client-side technologies. 
+ * Server-side technologies, such as PHP, Python with frameworks like Django or Flask, Ruby with Ruby on Rails, or Java with frameworks like Spring, handle the processing and generation of dynamic content on the server before sending it to the client's web browser. Here's a simplified overview of how dynamic content is generated using server-side technologies:
+ */
+
+//What steps happen when a client makes a request to a server?
+//User send request to server like HTTP request, After make respons processed server send respons to user.
+
+//What is a framework?
+//Framework is having to write the same code over and over and over again just to cover the basic tasks that they wanted their applications to perform. So they batched that recycled code together and called it a framework. Example is ruby on rail and Flask.
+
+//Describe some popular frameworks
+
+//Flask is one of the python framwork,Flask can use HTTP request, intract with database and careate web site of form. Also Flask can more variable things too.
+
+//What is Node.js?
+
+/**
+ *
+Node.js is an open-source, cross-platform JavaScript runtime environment built on the V8 JavaScript engine. It allows developers to execute JavaScript code outside of a web browser, enabling server-side scripting and the development of scalable network applications. Node.js utilizes an event-driven, non-blocking I/O model, which makes it efficient and well-suited for handling concurrent operations.
+ */
+
+//What is the event loop
+
+/**
+ * In Node.js, the event loop continuously loops, checking for pending events and executing the associated callbacks when events occur. The event loop operates on an event-driven architecture, where callbacks are registered to be executed in response to specific events. These events can include data being received from a network socket, a file being read or written, a timer expiring, or a user-generated event.
+ */
+
+//.env files
+
+/**
+ * .env files, also known as dotenv files, are configuration files commonly used in software development to store environment-specific variables and settings. The term "dotenv" is derived from the "dotenv" library, which is often used to load and parse these files in various programming languages.
+The purpose of .env files is to separate configuration details from the codebase, making it easier to manage environment-specific settings and keep sensitive information, such as API keys, database credentials, and other configuration values, separate from the application code.
+ */
+
+//HTTP module
+/**
+ * The HTTP module is a built-in module in Node.js that provides functionality for creating HTTP servers and making HTTP requests. It allows developers to interact with the HTTP protocol, handle incoming HTTP requests, and send HTTP requests to external servers.
+The HTTP module in Node.js offers classes, methods, and events to facilitate working with HTTP. Here are some of its key features
+ */
+
+//fs module
+/**
+ * The fs module provides a lot of very useful functionality to access and interact with the file system.
+There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
+ */
+
+//URL class
+/**
+ * In Node.js, the URL class is a built-in module that provides a way to parse, manipulate, and resolve Uniform Resource Locators (URLs). It allows developers to work with URLs in a structured and convenient manner.
+ */
+
+//NPM
+/**
+ * npm is the standard package manager for Node.js.
+In September 2022 over 2.1 million packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.
+It started as a way to download and manage dependencies of Node.js packages, but it has since become a tool used also in frontend JavaScript.
+ */
+
+//Events
+
+/**
+ * In Node.js, events are a core concept that allows communication and interaction between different parts of an application. The event-driven architecture in Node.js is based on the EventEmitter class, which is a built-in module that provides event handling capabilities.
+ */
+
+//Any useful takeaways you can find
+/**
+ * Use the VS Code built-in Node debugger and Use the Chrome DevTools to debug Node is common ways to debag on Node.js.
+ */
